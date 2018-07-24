@@ -1,0 +1,43 @@
+.wizard {
+  display: inline-block;
+  width: 24%;
+  float: left;
+  margin-left: 1px;
+  color: #ddd;
+  border-bottom: 3px solid #ddd;
+}
+.wizard.active {
+  color: #333;
+  border-bottom: 3px solid #2da7db;
+}
+.wizard.passive {
+  color: #333;
+  border-bottom: 3px solid #94D0E9;
+}
+.button {
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  line-height: 13px;
+  padding: 4px 13px;
+  margin: 0;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  background-color: #2da7db;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  touch-callout: none;
+  -o-touch-callout: none;
+  -moz-touch-callout: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}

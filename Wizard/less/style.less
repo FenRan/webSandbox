@@ -2,49 +2,49 @@
 @color-passive: #94D0E9;
 @color-default: #ddd;
 @color-condition: #333;
+body {
+  font: normal 12px 'Open Sans', sans-serif;
+}
+.wizardBackground(@color, @backgroundColor) {
+  color: @color;
+  border-bottom: 3px solid @backgroundColor;
+}
 .wizard {
   display: inline-block;
+  height:23px;
   width: 25%-1px;
   float: left;
   margin-left: 1px;
-  color: @color-default;
-  border-bottom: 3px solid @color-default;
+  .wizardBackground(@color-default, @color-default);
   
   &.active {
-    color: @color-condition;
-    border-bottom: 3px solid @color-active;
+    .wizardBackground(@color-condition, @color-active);
+    
+    &:last-child{
+      .wizardBackground(@color-condition, transparent);
+      background-image: repeating-linear-gradient( -45deg, @color-passive, @color-passive 5px, @color-active 5px, @color-active 10px );
+      background-repeat: no-repeat;
+      background-position: 0 23px;
+      background-size: 1000px 3px;
+      animation: anim 1s infinite steps(10,end);
+      @keyframes anim {
+        100% {
+            background-position: -100px 23px;
+        }
+      }
+    }
   }
-  
   &.passive {
-    color: @color-condition;
-    border-bottom: 3px solid @color-passive;
+    .wizardBackground(@color-condition, @color-passive);
   }
 }
 
-.button{
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
-    line-height: 13px;
-    padding: 4px 13px;
-    margin: 0;
-    color: white;
-    font-weight: normal;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-    background-color: #2da7db;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    touch-callout: none;
-    -o-touch-callout: none;
-    -moz-touch-callout: none;
-    -webkit-touch-callout: none;
-    user-select: none;
-    -o-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
+.button {
+  font-size: 15px;
+  padding: 4px 13px;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #2da7db;
+  border-radius: 3px;
 }
